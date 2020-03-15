@@ -626,4 +626,41 @@ figure.highlight {
     }
 }
 
+.MJXc-display {
+    overflow: auto;
+}
+
+.content h2 {
+    border-left: 6px solid #ff6347;
+    border-bottom: 2px solid #ff6347;
+    padding: 6px;
+}
+
+.content h3 {
+    border-bottom: 2px solid #ff6347;
+    padding: 6px;
+}
+
+p {
+    line-height: 2.0;
+}
+
+.lang-box {
+    text-align: right;
+}
+
+.toc {
+    padding: 8px 19px;
+    margin: 2em 0;
+    border-top: solid 3px #ff6347;
+    border-bottom: solid 3px #ff6347;
+}
+
+.scroll-table table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;    
+}
+
 @import "insight";
