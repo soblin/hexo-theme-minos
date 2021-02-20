@@ -7,7 +7,8 @@
         <% } %>
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
+      <span class="column is-narrow">
+            <i class="fa fa-calendar"></i>
             <% if (has_config('article.date_format') && get_config('article.date_format') === 'relative' ) { %>
                 <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= format_date_full(post.date) %></time>
             <% } else if (has_config('article.date_format') && get_config('article.date_format') === 'full' ) { %>
@@ -37,7 +38,15 @@
             <%= `${ time.humanize() } ${ __('article.read')} (${ __('article.about') } ${ words } ${ __('article.words') })` %>
         </span>
         <% } %>
+        
+        <% if (post.last_modified){ %>
+        <span class="column is-narrow article-category">
+          <i class="fa fa-redo"></i>
+          <time datetime="<%= date_xml(post.last_modified) %>"><%= format_date_full(post.last_modified) %></time>
+        </span>
+        <% } %>
     </div>
+    
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
@@ -70,12 +79,6 @@
     </div>
     <% } %>
 </article>
-
-<% if (!index && has_config('share.type')) { %>
-<div class="sharebox">
-    <%- partial('share/' + get_config('share.type')) %>
-</div>
-<% } %>
 
 <% if (!index && get_config('comments') && has_config('comment.type')) { %>
 <div class="comments">

@@ -1,5 +1,5 @@
 $family-sans:"Hiragino Kaku Gothic ProN","メイリオ", sans;
-$family-mono: "Hiragino Kaku Gothic ProN", monospace, "メイリオ";
+$family-mono: "MeiryoKe_Gothic","Meiryoke_Console","'Source Code Pro'","Consolas", "Monaco","Menlo","Roboto", monospace;
 $border-color: #dbdbdb;
 
 body, button, input, select, textarea {
@@ -274,25 +274,6 @@ a.tag.article-tag {
             }
         }
     }
-
-    .gist {
-        table {
-            tr:hover {
-                background: transparent;
-            }
-            td {
-                border: none;
-            }
-        }
-
-        .file {
-            all: initial;
-        }
-    }
-}
-
-.sharebox {
-    margin-top: 3rem;
 }
 
 .comments {

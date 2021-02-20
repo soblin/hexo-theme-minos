@@ -1,11 +1,20 @@
 <footer class="footer">
     <div class="container">
+        <div class="column is-centered">
+             <% if (has_config('share.type')) { %>
+                <%- partial('share/' + get_config('share.type')) %>
+             <% } %>
+        </div>
+
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; <%= date(new Date(), 'YYYY') %> <%= get_config('author') || get_config('title') %>&nbsp;
-                <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                    <img src="https://api.netlify.com/api/v1/badges/5f6b417c-e4fd-43f2-a7c8-a4602ed7fef6/deploy-status" alt="Netlify Status"></img>
             </div>
+            <div class="column is-narrow has-text-centered">
+                &copy; <%= date(new Date(), 'YYYY') %> <%= get_config('author') || get_config('title') %>&nbsp;
+                <%= __('powered_by') %> <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            
             <div class="column is-hidden-mobile"></div>
 
             <% if (has_config('footer_links')) { %>
